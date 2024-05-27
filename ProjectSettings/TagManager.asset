@@ -8,10 +8,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - TEST
   - Water
   - UI
-  - 
+  - Mini Orc
   - 
   - 
   - 
@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Grass
+    uniqueID: 590972457
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Objet
+    uniqueID: 3514328185
+    locked: 0
+  - name: Ciel
+    uniqueID: 3852344625
     locked: 0
