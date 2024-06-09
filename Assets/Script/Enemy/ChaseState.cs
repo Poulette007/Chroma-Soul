@@ -20,7 +20,7 @@ public class ChaseState : State
         agent = enemyID.GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-        agent.speed = speed;
+        //agent.speed = speed;
         agent.nextPosition = enemyID.GetComponent<Rigidbody2D>().position;
     }
     public override State RunCurrentState()
