@@ -13,7 +13,7 @@ namespace Enemy.GOAP.Behaviors
         private Animator animator;
         private AgentBehaviour AgentBehavior;
         private ITarget CurrentTarget;
-        private Vector3 LastPosition;
+        private Vector2 LastPosition;
         [SerializeField] private float MinMoveDistance = 0.25f;
         private static readonly int WALK = Animator.StringToHash("Walk"); 
 
@@ -22,6 +22,9 @@ namespace Enemy.GOAP.Behaviors
             navMeshAgent = GetComponent<NavMeshAgent>();
             animator = GetComponent<Animator>();
             AgentBehavior = GetComponent<AgentBehaviour>(); 
+
+            navMeshAgent.updateRotation = false;
+            navMeshAgent.updateUpAxis = false;
         }
         private void OnEnable()
         {
@@ -55,7 +58,7 @@ namespace Enemy.GOAP.Behaviors
                 return;
             }
 
-            if (MinMoveDistance <= Vector3.Distance(CurrentTarget.Position, LastPosition))
+            if (MinMoveDistance <= Vector2.Distance(CurrentTarget.Position, LastPosition))
             {
                 LastPosition = CurrentTarget.Position;
                 navMeshAgent.SetDestination(CurrentTarget.Position);    
