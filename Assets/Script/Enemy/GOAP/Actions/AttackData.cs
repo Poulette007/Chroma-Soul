@@ -5,9 +5,9 @@ namespace Enemy.GOAP.Actions
 {
     public class AttackData : CommonData
     {
-        public static readonly int ATTACK = Animator.StringToHash("Attack");
+        //public static readonly int ATTACK = Animator.StringToHash("Attack");
 
-        [GetComponent]
-        public Animator animator{get;set;}
+        //[GetComponent]
+        //public Animator animator{get;set;}
     }
 }

@@ -41,22 +41,22 @@ namespace Enemy.GOAP.Behaviors
         }
         private void OnEnable()
         {
-            playerSensor.OnPlayerEnter += PlyaerSensorOnPlayerEnter;
-            playerSensor.OnPlayerExit += PlyaerSensorOnPlayerExit;
+            playerSensor.OnPlayerEnter += PlayerSensorOnPlayerEnter;
+            playerSensor.OnPlayerExit += PlayerSensorOnPlayerExit;
         }
         private void OnDisable()
         {
-            playerSensor.OnPlayerEnter -= PlyaerSensorOnPlayerEnter;
-            playerSensor.OnPlayerExit -= PlyaerSensorOnPlayerExit;
+            playerSensor.OnPlayerEnter -= PlayerSensorOnPlayerEnter;
+            playerSensor.OnPlayerExit -= PlayerSensorOnPlayerExit;
             
         }
-        private void PlyaerSensorOnPlayerExit(Vector3 lastKnownPosition)
+        private void PlayerSensorOnPlayerExit(Vector3 lastKnownPosition)
         {
             Debug.Log("Orc Brain -- Wander Goal");
             agentBehaviour.SetGoal<WanderGoal>(true);
         }
 
-        private void PlyaerSensorOnPlayerEnter(Transform player)
+        private void PlayerSensorOnPlayerEnter(Transform player)
         {
             Debug.Log("Orc Brain -- Kill player goal");
             agentBehaviour.SetGoal<KillPlayerGoal>(true);

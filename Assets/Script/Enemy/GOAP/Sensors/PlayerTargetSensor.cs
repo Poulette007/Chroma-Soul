@@ -20,8 +20,8 @@ namespace Enemy.GOAP.Sensors
 
         public override ITarget Sense(IMonoAgent agent, IComponentReference references)
         {
-            if (Physics2D.OverlapCircleNonAlloc(agent.transform.position, attackConfig.sensorRadius, collider,
-                attackConfig.AttackableLayerMask) > 0)
+            if (Physics2D.OverlapCircleNonAlloc(agent.transform.position, attackConfig.sensorRadius,
+             collider, attackConfig.AttackableLayerMask) > 0)
             {
                 return new TransformTarget(collider[0].transform);
             }

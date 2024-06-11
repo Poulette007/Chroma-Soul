@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa0012d17845daf44b148a7cd6d04222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 3
 --- !u!1 &284944223
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,7 +905,7 @@ GameObject:
   - component: {fileID: 739175025}
   - component: {fileID: 739175027}
   - component: {fileID: 739175026}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1048,7 +1048,7 @@ Transform:
   m_GameObject: {fileID: 771926591}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0727515, y: 11.914893, z: 0.024176598}
+  m_LocalPosition: {x: -1.072752, y: 11.91489, z: 0.0241766}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1089,8 +1089,8 @@ NavMeshAgent:
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 80
-  m_StoppingDistance: 0
+  m_AngularSpeed: 120
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1189,7 +1189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261941b8f86f0514b845d8d8042b82b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinMoveDistance: 0.25
+  MinMoveDistance: 1
 --- !u!114 &771926600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1260,11 +1260,11 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.007632494, y: -0.28239632}
-  m_Size: {x: 0.95314693, y: 0.95314693}
+  m_Offset: {x: 0.007632494, y: -0.2823963}
+  m_Size: {x: 0.9531469, y: 0.9531469}
   m_Direction: 0
 --- !u!1 &777433746
 GameObject:
@@ -1345,8 +1345,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 5, y: 5}
-  m_Direction: 0
+  m_Size: {x: 10, y: 10}
+  m_Direction: 1
 --- !u!1 &855749865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,7 +1357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 855749866}
   - component: {fileID: 855749867}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1746,7 +1746,7 @@ GameObject:
   - component: {fileID: 1181433969}
   - component: {fileID: 1181433970}
   - component: {fileID: 1181433971}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1967,6 +1967,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5099801151906598284, guid: a1a34acd19fce5546bf27ce4a9999891, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6121345463769376151, guid: a1a34acd19fce5546bf27ce4a9999891, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.73
@@ -2042,7 +2046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1470389568}
   - component: {fileID: 1470389567}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2354,6 +2358,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5099801151906598284, guid: a1a34acd19fce5546bf27ce4a9999891, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6121345463769376151, guid: a1a34acd19fce5546bf27ce4a9999891, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.17
@@ -2525,6 +2533,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2619694964335955344, guid: 17a8d66d3aea9fc448a9f89d4b2fcd0c, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.02053767
+      objectReference: {fileID: 0}
     - target: {fileID: 4674156789483627123, guid: 17a8d66d3aea9fc448a9f89d4b2fcd0c, type: 3}
       propertyPath: CurrentState
       value: 
@@ -2571,6 +2583,10 @@ PrefabInstance:
     - target: {fileID: 5099801151906598284, guid: a1a34acd19fce5546bf27ce4a9999891, type: 3}
       propertyPath: m_Name
       value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099801151906598284, guid: a1a34acd19fce5546bf27ce4a9999891, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6121345463769376151, guid: a1a34acd19fce5546bf27ce4a9999891, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2697,6 +2713,10 @@ PrefabInstance:
     - target: {fileID: 5797502824226566998, guid: ec4c87590f85bb64799aa2c85fde3c61, type: 3}
       propertyPath: m_Name
       value: Maison
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797502824226566998, guid: ec4c87590f85bb64799aa2c85fde3c61, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6529008374300272896, guid: ec4c87590f85bb64799aa2c85fde3c61, type: 3}
       propertyPath: m_RenderingLayerMask

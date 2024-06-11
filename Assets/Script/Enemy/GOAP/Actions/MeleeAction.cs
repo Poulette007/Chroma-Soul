@@ -17,7 +17,7 @@ namespace Enemy.GOAP.Actions
 
         public override void End(IMonoAgent agent, AttackData data)
         {
-            data.animator.SetBool(AttackData.ATTACK, false); 
+            //data.animator.SetBool(AttackData.ATTACK, false); 
         }
 
         public void Inject(DependencyInjector injector)
@@ -28,9 +28,9 @@ namespace Enemy.GOAP.Actions
         public override ActionRunState Perform(IMonoAgent agent, AttackData data, ActionContext context)
         {
             data.Timer -= context.DeltaTime;
-
-            bool shouldAttack = data.Target != null && Vector2.Distance(data.Target.Position, agent.transform.position) <= attackConfig.MeleeAttackRadius;
-            data.animator.SetBool(AttackData.ATTACK, shouldAttack);
+            //data.Target != null &&
+            bool shouldAttack =  Vector3.Distance(data.Target.Position, agent.transform.position) <= attackConfig.MeleeAttackRadius;
+            //data.animator.SetBool(AttackData.ATTACK, shouldAttack);
 
             if (shouldAttack)
             {
