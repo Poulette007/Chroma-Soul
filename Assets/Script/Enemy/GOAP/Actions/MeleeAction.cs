@@ -12,7 +12,7 @@ namespace Enemy.GOAP.Actions
 {
     public class MeleeAction : ActionBase<AttackData>, IInjectable
     {
-        private AttackConfigSO attackConfig;
+        private BotActionConfigSO attackConfig;
         public override void Created() {}
 
         public override void End(IMonoAgent agent, AttackData data)
@@ -22,11 +22,12 @@ namespace Enemy.GOAP.Actions
 
         public void Inject(DependencyInjector injector)
         {
-            attackConfig = injector.attackConfig;
+            attackConfig = injector.botActionConfig;
         }
 
         public override ActionRunState Perform(IMonoAgent agent, AttackData data, ActionContext context)
         {
+            Debug.Log("Melee Action --- Perform");
             data.Timer -= context.DeltaTime;
             //data.Target != null &&
             bool shouldAttack =  Vector3.Distance(data.Target.Position, agent.transform.position) <= attackConfig.MeleeAttackRadius;

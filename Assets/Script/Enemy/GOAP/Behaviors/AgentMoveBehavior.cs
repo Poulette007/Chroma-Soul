@@ -1,5 +1,6 @@
 using CrashKonijn.Goap.Behaviours;
 using CrashKonijn.Goap.Interfaces;
+using Enemy.GOAP.Goals;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,8 @@ namespace Enemy.GOAP.Behaviors
         private ITarget CurrentTarget;
         private Vector2 LastPosition;
         [SerializeField] private float MinMoveDistance = 0.25f;
+        //internal ProtectAreaGoal goal;
+
         //private static readonly int WALK = Animator.StringToHash("Walk"); 
 
         private void Awake()
@@ -47,26 +50,32 @@ namespace Enemy.GOAP.Behaviors
         private void EventsOnTargetChanged(ITarget target, bool inRange)
         {
             CurrentTarget = target;
-            Debug.Log("Position target: " + CurrentTarget.Position); 
-            Debug.Log("Position Self: " + AgentBehavior.transform.position); 
+            //Debug.Log("Position target: " + CurrentTarget.Position); 
+            //Debug.Log("Position Self: " + AgentBehavior.transform.position); 
             LastPosition = CurrentTarget.Position;
-            navMeshAgent.SetDestination(target.Position);
+            MoveTo(target.Position);
             //animator.SetBool(WALK, true);
+        }
+        public void MoveTo(Vector2 targetPosition)
+        {
+            Debug.Log("target psotion : " + targetPosition);
+            navMeshAgent.SetDestination(targetPosition);
         }
 
         private void Update()
         {
             if (CurrentTarget == null)
             {
-                Debug.Log("Target  null ");
+                //Debug.Log("Target  null ");
                 return;
             }
 
             if (MinMoveDistance <= Vector2.Distance(CurrentTarget.Position, LastPosition))
             {
-                Debug.Log("Target : " + CurrentTarget + "   Pos: " + CurrentTarget.Position);
+                //Debug.Log("Target : " + CurrentTarget + "   Pos: " + CurrentTarget.Position);
                 LastPosition = CurrentTarget.Position;
-                navMeshAgent.SetDestination(CurrentTarget.Position);    
+                MoveTo(CurrentTarget.Position);
+                //navMeshAgent.SetDestination(CurrentTarget.Position);    
             }
             
             //animator.SetBool(WALK, navMeshAgent.velocity.magnitude > 0.1f);

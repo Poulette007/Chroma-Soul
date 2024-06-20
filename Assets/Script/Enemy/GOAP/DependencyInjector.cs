@@ -6,7 +6,9 @@ using Enemy.GOAP.Config;
 namespace Enemy.GOAP{
     public class DependencyInjector : GoapConfigInitializerBase, IGoapInjector
     {
-        public AttackConfigSO attackConfig;
+        public BotActionConfigSO botActionConfig;
+        public BossConfigSO bossConfig;
+        public StatsConfigSO statsConfig;
         public override void InitConfig(GoapConfig config)
         {
             config.GoapInjector = this;
@@ -38,8 +40,7 @@ namespace Enemy.GOAP{
 
         public void Inject(ITargetSensor targetSensor)
         {
-            if (targetSensor is IInjectable injectable)
-            {
+            if (targetSensor is IInjectable injectable) {
                 injectable.Inject(this);
             }
         }

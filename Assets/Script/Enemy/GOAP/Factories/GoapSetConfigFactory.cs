@@ -28,7 +28,7 @@ namespace Enemy.GOAP.Factories
             BuildSensors(builder);
 
 
-            return builder.Build();
+            return builder.Build(); 
         }
         private void BuildGoals(GoapSetBuilder builder)
         {
@@ -37,6 +37,10 @@ namespace Enemy.GOAP.Factories
 
             builder.AddGoal<KillPlayerGoal>()
                 .AddCondition<PlayerHealth>(Comparison.SmallerThanOrEqual, 0);
+            
+            builder.AddGoal<ProtectAreaGoal>()
+                .AddCondition<isProtectingArea>(Comparison.GreaterThanOrEqual, 1);
+
         }
         private void BuildAction(GoapSetBuilder builder)
         {
@@ -49,8 +53,15 @@ namespace Enemy.GOAP.Factories
             builder.AddAction<MeleeAction>()
                 .SetTarget<PlayerTarget>()
                 .AddEffect<PlayerHealth>(EffectType.Decrease)
-                .SetBaseCost(injector.attackConfig.MeleeAttackCost)
-                .SetInRange(injector.attackConfig.sensorRadius);
+                .SetBaseCost(injector.botActionConfig.MeleeAttackCost)
+                .SetInRange(injector.botActionConfig.sensorRadius);
+            
+            builder.AddAction<ProtectAreaAction>()
+                .SetTarget<ProtectTarget>()
+                .AddEffect<isProtectingArea>(EffectType.Increase)
+                .SetBaseCost(5)
+                .SetInRange(10);
+                
         }
         private void BuildSensors(GoapSetBuilder builder)
         {
@@ -59,6 +70,9 @@ namespace Enemy.GOAP.Factories
 
             builder.AddTargetSensor<PlayerTargetSensor>()
                 .SetTarget<PlayerTarget>();
+
+            builder.AddTargetSensor<ProtectAreaSensor>()
+                .SetTarget<ProtectTarget>();
         }
     }
 }
