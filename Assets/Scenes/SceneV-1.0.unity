@@ -1700,6 +1700,82 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossSensor: {fileID: 1009252065}
   bossConfig: {fileID: 11400000, guid: 2ff1aa0d008058f4cb07bcefb02485f1, type: 2}
+--- !u!1 &981294158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 981294159}
+  - component: {fileID: 981294162}
+  - component: {fileID: 981294161}
+  - component: {fileID: 981294160}
+  m_Layer: 0
+  m_Name: -- Boss Goap Config
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &981294159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981294158}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937544026}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &981294160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981294158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63d5d592cdc6ce4fb64ee07cfa62b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &981294161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981294158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afef628bdbb4c1c428bf36faaa62aa73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  botActionConfig: {fileID: 11400000, guid: 64bf93af430f74548bf921a3d5438301, type: 2}
+  bossConfig: {fileID: 11400000, guid: 2ff1aa0d008058f4cb07bcefb02485f1, type: 2}
+  statsConfig: {fileID: 11400000, guid: 19c56b932a55cc047aa644d9e6e86976, type: 2}
+--- !u!114 &981294162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981294158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19925b6b65787cf439172e5e095b51fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  configInitializer: {fileID: 0}
+  setConfigFactories: []
+  goapSetConfigFactories: []
 --- !u!1 &987309842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,7 +1930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botActionConfig: {fileID: 11400000, guid: 48c0aea11a9f21a42a8e3da99f0ff63f, type: 2}
-  bossConfig: {fileID: 11400000, guid: 2ff1aa0d008058f4cb07bcefb02485f1, type: 2}
+  bossConfig: {fileID: 0}
   statsConfig: {fileID: 11400000, guid: d021792bc29db2e4f874d35bfaa648f1, type: 2}
 --- !u!1 &1009252063
 GameObject:
@@ -2451,7 +2527,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1937544026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1472382299
 SpriteRenderer:
@@ -2823,15 +2899,17 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937544025}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1005939640}
+  - {fileID: 981294159}
   - {fileID: 987309843}
   - {fileID: 771926592}
   - {fileID: 949392492}
+  - {fileID: 1472382298}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1954835862
@@ -3320,4 +3398,3 @@ SceneRoots:
   - {fileID: 1202800883}
   - {fileID: 394543553}
   - {fileID: 1937544026}
-  - {fileID: 1472382298}
